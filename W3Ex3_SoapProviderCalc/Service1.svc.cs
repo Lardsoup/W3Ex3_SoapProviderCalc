@@ -22,7 +22,7 @@ namespace W3Ex3_SoapProviderCalc
 			return ValueA + ValueB;
 		}
 
-		public double Subtract(double ValueA, double ValueB)
+		public double Subtract(double ValueA, double ValueB) 
 		{
 			return ValueA - ValueB;
 		}
