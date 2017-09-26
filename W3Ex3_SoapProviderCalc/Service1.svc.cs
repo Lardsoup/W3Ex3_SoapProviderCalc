@@ -17,17 +17,46 @@ namespace W3Ex3_SoapProviderCalc
 			return string.Format("You entered: {0}", value);
 		}
 
-		public CompositeType GetDataUsingDataContract(CompositeType composite)
+		public double Add(double ValueA, double ValueB)
 		{
-			if (composite == null)
-			{
-				throw new ArgumentNullException("composite");
-			}
-			if (composite.BoolValue)
-			{
-				composite.StringValue += "Suffix";
-			}
-			return composite;
+			return ValueA + ValueB;
 		}
+
+		public double Subtract(double ValueA, double ValueB)
+		{
+			return ValueA - ValueB;
+		}
+
+		public double Multiply(double ValueA, double ValueB)
+		{
+			return ValueA * ValueB;
+		}
+
+		public double Divide(double ValueA, double ValueB)
+		{
+			return ValueA / ValueB;
+		}
+
+		public double DoAll(double ValueA, double ValueB, out double Sub, out double Multi, out double Div)
+		{
+			double a  = Add(ValueA, ValueB);
+			Sub = Subtract(ValueA, ValueB);
+			Multi = Multiply(ValueA, ValueB);
+			Div = Divide(ValueA, ValueB);
+			return a;
+		}
+
+		//public CompositeType GetDataUsingDataContract(CompositeType composite)
+		//{
+		//	if (composite == null)
+		//	{
+		//		throw new ArgumentNullException("composite");
+		//	}
+		//	if (composite.BoolValue)
+		//	{
+		//		composite.StringValue += "Suffix";
+		//	}
+		//	return composite;
+		//}
 	}
 }

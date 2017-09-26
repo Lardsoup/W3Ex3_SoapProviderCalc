@@ -17,31 +17,45 @@ namespace W3Ex3_SoapProviderCalc
 		string GetData(int value);
 
 		[OperationContract]
-		CompositeType GetDataUsingDataContract(CompositeType composite);
+		double Add(double ValueA, double ValueB);
 
-		// TODO: Add your service operations here
+		[OperationContract]
+		double Subtract(double ValueA, double ValueB);
+
+		[OperationContract]
+		double Multiply(double ValueA, double ValueB);
+
+		[OperationContract]
+		double Divide(double ValueA, double ValueB);
+
+		[OperationContract]
+		double DoAll(double ValueA, double ValueB, out double Sub, out double Multi, out double Div);
+
+		//[OperationContract]
+		//CompositeType GetDataUsingDataContract(CompositeType composite);
 	}
 
 
-	// Use a data contract as illustrated in the sample below to add composite types to service operations.
-	[DataContract]
-	public class CompositeType
-	{
-		bool boolValue = true;
-		string stringValue = "Hello ";
+	//Use a data contract as illustrated in the sample below to add composite types to service operations.
 
-		[DataMember]
-		public bool BoolValue
-		{
-			get { return boolValue; }
-			set { boolValue = value; }
-		}
+ //  [DataContract]
+	//public class CompositeType
+	//{
+	//	bool boolValue = true;
+	//	string stringValue = "Hello ";
 
-		[DataMember]
-		public string StringValue
-		{
-			get { return stringValue; }
-			set { stringValue = value; }
-		}
-	}
+	//	[DataMember]
+	//	public bool BoolValue
+	//	{
+	//		get { return boolValue; }
+	//		set { boolValue = value; }
+	//	}
+
+	//	[DataMember]
+	//	public string StringValue
+	//	{
+	//		get { return stringValue; }
+	//		set { stringValue = value; }
+	//	}
+	//}
 }
